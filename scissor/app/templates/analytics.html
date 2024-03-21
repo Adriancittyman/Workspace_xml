@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics</title>
+    <link rel="stylesheet"
+          type="text/css"
+          href="{{ url_for('static', path='/url/css/style.css') }}">
+</head>
+<body>
+    <h2>Analytics for Shortened URL: {{ short_url }}</h2>
+    <p>Total Clicks: {{ clicks }}</p>
+    <h3>Click Data:</h3>
+    <ul>
+    {% for click in click_data %}
+        <li>IP Address: {{ click.ip_address }}, Clicked At: {{ click.created_at }}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
